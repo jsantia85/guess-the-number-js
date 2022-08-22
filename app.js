@@ -1,10 +1,15 @@
 'use strict';
 
-console.log(document.querySelector('.message').textContent)
+const secretNum = Math.trunc(Math.random() * 30) + 1
+document.querySelector('.number').textContent = secretNum
 
-document.querySelector('.message').textContent = "🙌🏽 Correct Number!"
+document.querySelector('.check').addEventListener('click',
+  function() {
+    const guess = Number(document.querySelector('.guess').value)
 
-document.querySelector(".number").textContent = 13
-document.querySelector('.score').textContent = 15
-
-document.querySelector('.guess').value = 23
+    if (!guess) {
+      document.querySelector('.message').textContent = 'Please Enter a Number...'
+    } else if (guess === secretNum) {
+      document.querySelector('.message').textContent = "🙌🏽 Correct Number!"
+    }
+  })
