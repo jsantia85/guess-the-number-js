@@ -1,7 +1,6 @@
 'use strict';
 
-const secretNum = Math.trunc(Math.random() * 30) + 1
-document.querySelector('.number').textContent = secretNum
+let secretNum = Math.trunc(Math.random() * 30) + 1
 
 let score = 30
 
@@ -14,8 +13,10 @@ document.querySelector('.check').addEventListener('click',
     if (!guess) {
       document.querySelector('.message').textContent = 'Please Enter a Number...'
     } else if (guess === secretNum) {
-      document.querySelector('.message').textContent = "🙌🏽 Correct Number!"
-      document.querySelector("body").style.backgroundColor = '#60b347'
+      document.querySelector('.message').textContent = "🙌🏽 Correct Number!";
+      document.querySelector('.number').textContent = secretNum;
+      document.querySelector("body").style.backgroundColor = '#60b347';
+      document.querySelector('number').style.width = '30rem'
     } else if (guess < secretNum) {
       if (score > 1) {
         document.querySelector('.message').textContent = '⬇️ Too Low';
@@ -36,3 +37,9 @@ document.querySelector('.check').addEventListener('click',
       }
     }
   })
+
+document.querySelector('.again').addEventListener('click', function() {
+  score = 30;
+  secretNum = Math.trunc(Math.random() * 30) + 1;
+
+})
