@@ -21,18 +21,9 @@ document.querySelector('.check').addEventListener('click',
         highscore = score;
         document.querySelector('.highscore').textContent = highscore;
       }
-    } else if (guess < secretNum) {
+    } else if (guess !== secretNum) {
       if (score > 1) {
-        document.querySelector('.message').textContent = '⬇️ Too Low';
-        score--
-        document.querySelector('.score').textContent = score
-      } else {
-        document.querySelector('.message').textContent = 'Game Over 😔';
-        document.querySelector('.score').textContent = 0
-      }
-    } else if (guess > secretNum) {
-      if (score > 1) {
-        document.querySelector('.message').textContent = '⬆️ Too High';
+        document.querySelector('.message').textContent = guess > secretNum ? '⬆️ Too High' : '⬇️ Too Low'
         score--
         document.querySelector('.score').textContent = score
       } else {
