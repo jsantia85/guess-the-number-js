@@ -15,6 +15,7 @@ document.querySelector('.check').addEventListener('click',
       document.querySelector('.message').textContent = 'Please Enter a Number...'
     } else if (guess === secretNum) {
       document.querySelector('.message').textContent = "🙌🏽 Correct Number!"
+      document.querySelector("body").style.backgroundColor = '#60b347'
     } else if (guess < secretNum) {
       if (score > 1) {
         document.querySelector('.message').textContent = '⬇️ Too Low';
