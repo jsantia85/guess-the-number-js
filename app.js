@@ -14,7 +14,7 @@ document.querySelector('.check').addEventListener('click',
       document.querySelector('.message').textContent = "🙌🏽 Correct Number!";
       document.querySelector('.number').textContent = secretNum;
       document.querySelector("body").style.backgroundColor = '#60b347';
-      document.querySelector('number').style.width = '30rem'
+      document.querySelector('.number').style.width = '30rem'
     } else if (guess < secretNum) {
       if (score > 1) {
         document.querySelector('.message').textContent = '⬇️ Too Low';
@@ -42,7 +42,7 @@ document.querySelector('.again').addEventListener('click', function() {
   document.querySelector('.message').textContent = 'Start guessing...';
   document.querySelector('.score').textContent = score;
   document.querySelector('.number').textContent = '?';
-  document.querySelector('.guess').textContent = '';
+  document.querySelector('.guess').value = ' ';
   document.querySelector("body").style.backgroundColor = '#222';
-  document.querySelector('number').style.width = '15rem'
+  document.querySelector('.number').style.width = '15rem'
 })
