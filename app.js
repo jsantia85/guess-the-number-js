@@ -4,8 +4,6 @@ let secretNum = Math.trunc(Math.random() * 30) + 1
 
 let score = 30
 
-console.log(typeof score)
-
 document.querySelector('.check').addEventListener('click',
   function() {
     const guess = Number(document.querySelector('.guess').value)
@@ -41,5 +39,10 @@ document.querySelector('.check').addEventListener('click',
 document.querySelector('.again').addEventListener('click', function() {
   score = 30;
   secretNum = Math.trunc(Math.random() * 30) + 1;
-
+  document.querySelector('.message').textContent = 'Start guessing...';
+  document.querySelector('.score').textContent = score;
+  document.querySelector('.number').textContent = '?';
+  document.querySelector('.guess').textContent = '';
+  document.querySelector("body").style.backgroundColor = '#222';
+  document.querySelector('number').style.width = '15rem'
 })
